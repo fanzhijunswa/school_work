@@ -6,7 +6,9 @@
                 .home-top-child
                     .home-top-child-top
                         .home-top-opc
-                        .home-top-word 粉丝数量
+                        .home-top-word 关注数
+                            .home-top-word-top
+                            .home-top-word-bottom
                     .home-top-child-middle 我只是中间
                     .home-top-child-footer
                         .home-footer-opc
@@ -14,7 +16,7 @@
                 .home-top-child
                     .home-top-child-top
                         .home-top-opc
-                        .home-top-word 我只是头部
+                        .home-top-word 粉丝数
                     .home-top-child-middle 我只是中间
                     .home-top-child-footer
                         .home-footer-opc
@@ -23,7 +25,7 @@
                 .home-top-child
                     .home-top-child-top
                         .home-top-opc
-                        .home-top-word 我只是头部
+                        .home-top-word 获赞数
                     .home-top-child-middle 我只是中间
                     .home-top-child-footer
                         .home-footer-opc
@@ -31,7 +33,7 @@
                 .home-top-child
                     .home-top-child-top
                         .home-top-opc
-                        .home-top-word 我只是头部
+                        .home-top-word 评论数
                     .home-top-child-middle 我只是中间
                     .home-top-child-footer
                         .home-footer-opc
@@ -74,7 +76,6 @@ export default {
                 height: 100%
                 margin-right: 25px
                 display: flex
-                // background-color: red
                 justify-content: space-between
                 .home-top-child
                     width: 50%
@@ -99,6 +100,7 @@ export default {
                             z-index: 2333
                         .home-top-word
                             text-align: center
+                            color: $color-white
                             line-height: 40px
                             width: 100%
                             height: 100%
@@ -108,7 +110,8 @@ export default {
                             z-index: 2334
                     .home-top-child-middle
                         flex: 1
-                        background-color: blue
+                        background-color: rgba(0, 0, 0, 1)
+                        opacity: 0.3
                     .home-top-child-footer
                         width: 100%
                         height: 40px
@@ -131,7 +134,6 @@ export default {
                             z-index: 2334
             .home-middle-top-right
                 flex: 1
-                background-color: skyblue
                 margin-right: 0
         .home-middle-bottom
             width: 100%

@@ -42,28 +42,28 @@ export default {
 <style lang="sass" scoped>
 @import '@/assets/styles/_color.sass'
 .container
+    background: linear-gradient(to right,#feac5e,#c779d0,#4bc0c8)
     width: 100%
     height: 100%
     &>.el-container
         height: 100%
         &>.el-header
-            background-color: $color-orange
         &>.el-container
             &>.el-aside
                 width: 200px!important
                 &>.el-menu
                     border-right: 0
-                    background-color: $color-white
+                    background-color: transparent
                     height: 100%
                     .el-menu-item,.is-active,.el-submenu
                         transition: 0s
                         ::v-deep .el-submenu__title //深度选择器,sass必须使用 ::v-deep才可以
                             transition: 0s
                     .is-active
-                        background-color: $color-purple
-                        color: red
+                        background-color: rgba(255, 255, 255, 0.3)
+                        color: $color-blue
 
             &>.el-main
-                background: linear-gradient(to right,#feac5e,#c779d0,#4bc0c8)
+                box-sizing: border-box
                 padding-right: 0
 </style>
