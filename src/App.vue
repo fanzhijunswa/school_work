@@ -65,5 +65,4 @@ export default {
 
             &>.el-main
                 box-sizing: border-box
-                padding-right: 0
 </style>

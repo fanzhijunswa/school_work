@@ -3,51 +3,22 @@
     .home-middle
         .home-middle-top
             .home-middle-top-left
-                .home-top-child
-                    .home-top-child-top
-                        .home-top-opc
-                        .home-top-word 关注数
-                            .home-top-word-top
-                            .home-top-word-bottom
-                    .home-top-child-middle 我只是中间
-                    .home-top-child-footer
-                        .home-footer-opc
-                        .home-footer-word 我只是尾部
-                .home-top-child
-                    .home-top-child-top
-                        .home-top-opc
-                        .home-top-word 粉丝数
-                    .home-top-child-middle 我只是中间
-                    .home-top-child-footer
-                        .home-footer-opc
-                        .home-footer-word 我只是尾部
+                home-card(:option="{backgroundColor: '#178FFF',top: 'ORDERS',middle: '1,587',bottom: '近日新增15条文件',icon: 'iconfont icon-wenjian',marginShow: true}")
+                home-card(:option="{backgroundColor: '#F5BE11',top: 'VISITORS',middle: '234',bottom: '近日新增15条文件',icon: 'iconfont icon-tongji',marginShow: false}")
             .home-middle-top-right
-                .home-top-child
-                    .home-top-child-top
-                        .home-top-opc
-                        .home-top-word 获赞数
-                    .home-top-child-middle 我只是中间
-                    .home-top-child-footer
-                        .home-footer-opc
-                        .home-footer-word 我只是尾部
-                .home-top-child
-                    .home-top-child-top
-                        .home-top-opc
-                        .home-top-word 评论数
-                    .home-top-child-middle 我只是中间
-                    .home-top-child-footer
-                        .home-footer-opc
-                        .home-footer-word 我只是尾部
+                home-card(:option="{backgroundColor: '#22B678',top: 'ORDERS',middle: '1,587',bottom: '近日新增15条文件',icon: 'iconfont icon-fl-renyuan',marginShow: true}")
+                home-card(:option="{backgroundColor: '#EB3838',top: 'ORDERS',middle: '1,587',bottom: '近日新增15条文件',icon: 'iconfont icon-xiaoxi',marginShow: false,animationShow: true}")
         .home-middle-bottom
             .home-bottom-left
             .home-bottom-right
 
 </template>
 <script>
+import HomeCard from './components/home-card'
 export default {
   name: 'home',
   components: {
-
+    HomeCard
   },
   data () {
     return {}
@@ -62,13 +33,13 @@ export default {
     width: 100%
     .home-middle
         width: 100%
-        height: 500px
+        height: 325px
         display: flex
         flex-direction: column
         justify-content: space-between
         .home-middle-top
             width: 100%
-            height: 50%
+            height: 150px
             margin-bottom: 25px
             display: flex
             .home-middle-top-left,.home-middle-top-right
@@ -77,67 +48,11 @@ export default {
                 margin-right: 25px
                 display: flex
                 justify-content: space-between
-                .home-top-child
-                    width: 50%
-                    height: 100%
-                    margin-right: 25px
-                    display: flex
-                    flex-direction: column
-                    &:nth-last-child(1)
-                        margin-right: 0
-                    .home-top-child-top
-                        width: 100%
-                        height: 40px
-                        position: relative
-                        .home-top-opc
-                            width: 100%
-                            height: 100%
-                            opacity:0.5
-                            background-color: #222
-                            position: absolute
-                            top: 0
-                            left: 0
-                            z-index: 2333
-                        .home-top-word
-                            text-align: center
-                            color: $color-white
-                            line-height: 40px
-                            width: 100%
-                            height: 100%
-                            position: absolute
-                            top: 0
-                            left: 0
-                            z-index: 2334
-                    .home-top-child-middle
-                        flex: 1
-                        background-color: rgba(0, 0, 0, 1)
-                        opacity: 0.3
-                    .home-top-child-footer
-                        width: 100%
-                        height: 40px
-                        position: relative
-                        .home-footer-opc
-                            width: 100%
-                            height: 100%
-                            opacity:0.7
-                            background-color: #222
-                            position: absolute
-                            top: 0
-                            left: 0
-                            z-index: 2333
-                        .home-footer-word
-                            width: 100%
-                            height: 100%
-                            position: absolute
-                            top: 0
-                            left: 0
-                            z-index: 2334
             .home-middle-top-right
                 flex: 1
                 margin-right: 0
         .home-middle-bottom
-            width: 100%
-            height: 50%
+            flex: 1
             display: flex
             justify-content: space-between
             .home-bottom-left

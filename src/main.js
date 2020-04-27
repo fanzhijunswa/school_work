@@ -5,6 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/styles/main.sass'
 import ElementUi from 'element-ui'
 import axios from 'axios'
+import '@/../sd-icon/style.css'
 
 Vue.use(ElementUi)
 Vue.prototype.$http = axios
