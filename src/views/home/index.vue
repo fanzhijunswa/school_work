@@ -1,59 +1,44 @@
 <template lang="pug">
 .home
-    h2 我是首页
-    .ceshi
-        el-button(type="primary") 发送请求
+    .el-container(class="big-home-container")
+        .el-header Header
+        .el-container(class="small-home-container")
+            .el-aside(width="200px") Aside
+            .el-main Main
 </template>
 
 <script>
-import _ from 'lodash'
 export default {
   name: 'home',
   data () {
     return {
-      movieData: [],
-      peopleArr: []
-    }
-  },
-  async created () {
-    await this.getDataAll()
-  },
-  methods: {
-    getDataAll () {
-      return Promise.all([this.getMovieData(), this.getIndex(), this.getCircle()]).catch(e => console.log('请求失败,失败日志为:', e))
-    },
-    getMovieData () {
-      return new Promise((resolve, reject) => {
-        this.$http.get('/getMovie').then(resp => {
-          this.movieData = _.get(resp, 'data.data', [])
-          console.log(this.movieData)
-          resolve()
-        }, e => reject(e))
-      })
-    },
-    getIndex () {
-      return new Promise((resolve, reject) => {
-        this.$http.get('/get').then(resp => {
-          console.log(resp.data.data)
-          resolve()
-        }, e => reject(e))
-      })
-    },
-    getCircle () {
-      return new Promise((resolve, reject) => {
-        this.$http.get('find', { params: { name: '机器人0' } }).then(resp => {
-          this.peopleArr = _.get(resp, 'data.result', [])
-          console.log(this.peopleArr)
-          resolve()
-        }, e => reject(e))
-      })
+
     }
   }
 }
 </script>
 
 <style lang="sass" scoped>
-@import '@/assets/styles/_color.sass'
-h2
-    color: $color-purple
+.home
+    width: 100%
+    height: 100%
+    &>.big-home-container
+        width: 100%
+        height: 100%
+        &>.el-header
+            width: 100%
+            background-color: #B3C0D1
+            color: #333
+            text-align: center
+            height: 60px
+        &>.small-home-container
+            height: 100%
+            width: 100%
+            &>.el-aside
+                width: 20%
+                height: 100%
+                background-color: #222
+                color: #333
+                text-align: center
+
 </style>
