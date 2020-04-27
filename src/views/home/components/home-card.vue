@@ -2,6 +2,9 @@
 .home-top-child(:style="{'background-color': option.backgroundColor,'margin-right': option.marginShow ? '25px' : '0'}" @click="startAnimation")
     .home-display-none(:class="showAnimation && 'show-top'")
         ul.home-display-container
+            li 1
+            li 2
+            li 3
     .home-top-child-left(:class="showAnimation && 'show-left'")
         h6.child-left-top {{ option.top }}
         h1.child-left-middle {{ option.middle }}
@@ -46,12 +49,15 @@ export default {
         top: 0
         left: 0
         background-color: green
-        transform: translateY(-100%)
+        transform: translateY(-101%)
         .home-display-container
             width: 100%
             height: 100%
             display: flex
             flex-direction: column
+            li
+                flex: 25%
+                background-color: purple
     .home-top-child-left
         width: 50%
         height: 100%
