@@ -9,8 +9,8 @@
                     //这里的这个就是下拉效果
                     el-menu-item-group
                         el-menu-item(index="/home" ref="home") 我的首页
-                        el-menu-item(index="/channel") 选项2
-                        el-menu-item(index="1-3") 选项3
+                        el-menu-item(index="/information") 选项2
+                        el-menu-item(index="/channel") 选项3
                         el-menu-item(index="1-4") 选项3
                         el-menu-item(index="1-5") 选项3
                         el-menu-item(index="1-6") 选项3

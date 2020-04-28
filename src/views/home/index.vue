@@ -72,7 +72,7 @@ export default {
                 height: 100%
                 margin-right: 25px
                 border-radius: 6px
-                background-color: #fff
+                background-color: rgba(0,0,0,0.3)
                 .home-bottom-left-top
                     width: 100%
                     height: 80px
