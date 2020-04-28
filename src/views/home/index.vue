@@ -11,66 +11,29 @@
         .home-middle-bottom
             .home-bottom-left
                 .home-bottom-left-top 统计图
-                .home-bottom-middle(style="height: 425px")
+                home-dashboard(setHeight="425px",:id="1")
             .home-bottom-right
-
+                .home-pie-left
+                    .home-bottom-left-top 性别
+                    home-dashboard(setHeight="425px",:id="2")
+                .home-pie-right
+                    .home-bottom-left-top 环状图
+                    home-dashboard(setHeight="425px",:id="3")
 </template>
 <script>
+import HomeDashboard from './components/home-dashboard'
 import HomeCard from './components/home-card'
 export default {
   name: 'home',
   components: {
-    HomeCard
+    HomeCard,
+    HomeDashboard
   },
   data () {
     return {}
   },
   mounted () {
-    const myChart = this.$echarts.init(document.querySelector('.home-bottom-middle'))
-    const option = {
-      legend: {},
-      tooltip: {},
-      dataset: {
-        dimensions: ['product', '2015', '2016', '2017'],
-        source: [
-          { product: 'Matcha Latte', 2015: 43.3, 2016: 85.8, 2017: 93.7 },
-          { product: 'Milk Tea', 2015: 83.1, 2016: 73.4, 2017: 55.1 },
-          { product: 'Cheese Cocoa', 2015: 86.4, 2016: 65.2, 2017: 82.5 },
-          { product: 'Walnut Brownie', 2015: 72.4, 2016: 53.9, 2017: 39.1 }
-        ]
-      },
-      xAxis: { type: 'category' },
-      yAxis: {},
-      // Declare several bar series, each will be mapped
-      // to a column of dataset.source by default.
-      series: [
-        {
-          type: 'bar',
-          itemStyle: {
-            normal: {
-              color: '#32C4E8'
-            }
-          }
-        },
-        {
-          type: 'bar',
-          itemStyle: {
-            normal: {
-              color: '#FA7192'
-            }
-          }
-        },
-        {
-          type: 'bar',
-          itemStyle: {
-            normal: {
-              color: '#FEDA5E'
-            }
-          }
-        }
-      ]
-    }
-    myChart.setOption(option)
+
   }
 }
 </script>
@@ -104,7 +67,7 @@ export default {
             flex: 1
             display: flex
             justify-content: space-between
-            .home-bottom-left
+            .home-bottom-left,.home-pie-left,.home-pie-right
                 width: 50%
                 height: 100%
                 margin-right: 25px
@@ -117,6 +80,8 @@ export default {
             .home-bottom-right
                 flex: 1
                 height: 100%
-                background-color: purple
+                display: flex
+                .home-pie-right
+                    margin-right: 0
 
 </style>
