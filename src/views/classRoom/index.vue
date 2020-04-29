@@ -7,12 +7,16 @@
             .row(
                 v-for="value in item.obj",
                 :class="value.opt",
-                :style="{backgroundColor: value.use ? '#EB3838' : '#fff',border: value.use && 0,cursor: value.use && 'auto'}",
+                :style="{cursor: value.use && 'auto',border: value.use ? 0 : '1px solid #CCCCCC'}",
                 @mouseover="showYep({value: value.opt,flag:true,use: value.use})",
                 @mouseleave="showYep({value: value.opt,flag:false,use: value.use})",
                 @click="sureClick({value: value.opt,use: value.use})"
             )
-                .row-success(v-if="value.use") {{ 'P' }}
+                //每个row都有一个唯一标志位,只要我们点击后,数组就会有这个标识,所以存在的话,那么就让这个圆圈内的对号显示出来
+                .content(v-if="classRoomArr.findIndex(item => item === value.opt) !== -1")
+                    img(src="../../assets/images/right_mark.jpg", alt="alt" class="iconfont icon-duihao")
+                .row-success(v-if="value.use")
+                  i(class="iconfont icon-zuowei1")
                 .row-pic(:id="value.opt")
                     img(src="../../assets/images/right_mark.jpg", alt="alt")
 </template>
@@ -70,7 +74,7 @@ export default {
         return false
       }
       const flag = _.findIndex(this.classRoomArr, item => item === value)
-      document.querySelector('.' + value).style.backgroundColor = flag !== -1 ? 'white' : '#22B678'
+      // document.querySelector('.' + value).style.backgroundColor = flag !== -1 ? 'white' : '#22B678'
       document.querySelector('.' + value).style.border = flag !== -1 ? '1px solid #CCCCCC' : 0
       document.getElementById(value).style.display = flag !== -1 ? 'block' : 'none'
       flag !== -1 ? this.classRoomArr.splice(flag, 1) : this.classRoomArr.push(value)
@@ -110,6 +114,7 @@ export default {
             &:nth-child(1)
                 margin-right: 6px
         .row
+            line-height: 20px
             width: 20px
             height: 20px
             margin-left: 1px
@@ -117,9 +122,29 @@ export default {
             margin-bottom: 10px
             border: 1px solid #CCCCCC
             border-radius: 50%
+            vertical-align: middle
+            text-align: right
+            position: relative
+            .icon-duihao
+              position: absolute
+              top: -1px
+              left: 3px
+              font-size: 12px
+              color: $color-green
+              font-weight: 700
+            .content
+                width: 60%
+                position: relative
+                img
+                    position: absolute
+                    width: 80%
+                    left: 5px
+                    top: 5px
             .row-success
                 text-align: center
                 color: $color-white
+                .icon-zuowei1
+                  color: $color-red
             .row-pic
                 display: none
                 width: 60%

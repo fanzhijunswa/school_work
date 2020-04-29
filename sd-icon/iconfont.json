@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "778505",
+      "name": "对号",
+      "font_class": "duihao",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
       "icon_id": "807967",
       "name": "统计",
       "font_class": "tongji",
@@ -20,11 +27,32 @@
       "unicode_decimal": 58917
     },
     {
+      "icon_id": "5912736",
+      "name": "座位",
+      "font_class": "zuowei",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "7463983",
+      "name": "座位",
+      "font_class": "zuowei1",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
       "icon_id": "11749455",
       "name": "文件",
       "font_class": "wenjian",
       "unicode": "e691",
       "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "13764758",
+      "name": "已选座位",
+      "font_class": "yixuanzuowei",
+      "unicode": "e616",
+      "unicode_decimal": 58902
     },
     {
       "icon_id": "14095315",
