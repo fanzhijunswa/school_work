@@ -11,7 +11,7 @@
                         el-menu-item(index="/home" ref="home") 我的首页
                         el-menu-item(index="/information") 选项2
                         el-menu-item(index="/channel") 选项3
-                        el-menu-item(index="1-4") 选项3
+                        el-menu-item(index="/classRoom") 选项3
                         el-menu-item(index="1-5") 选项3
                         el-menu-item(index="1-6") 选项3
                     el-submenu(index="1-7")
@@ -44,7 +44,7 @@ export default {
 .container
     background: linear-gradient(to right,#feac5e,#c779d0,#4bc0c8)
     width: 100%
-    height: 100%
+    min-height: 100%
     &>.el-container
         height: 100%
         &>.el-header
