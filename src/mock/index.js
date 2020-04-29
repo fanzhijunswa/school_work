@@ -28,43 +28,44 @@ Mock.mock('/api/getClassRoom', 'get', {
   msg: '响应成功',
   data: [
     {
+      floor: 1,
       name: 'A',
       obj: [
         {
           use: true,
-          opt: 'A-1'
+          opt: '1-A-101'
         },
         {
           use: true,
-          opt: 'A-2'
+          opt: '1-A-102'
         },
         {
           use: false,
-          opt: 'A-3'
+          opt: '1-A-103'
         },
         {
           use: true,
-          opt: 'A-4'
+          opt: '1-A-104'
         },
         {
           use: false,
-          opt: 'A-5'
+          opt: '1-A-105'
         },
         {
           use: true,
-          opt: 'A-6'
+          opt: '1-A-106'
         },
         {
           use: false,
-          opt: 'A-7'
+          opt: '1-A-107'
         },
         {
           use: true,
-          opt: 'A-8'
+          opt: '1-A-108'
         },
         {
           use: true,
-          opt: 'A-9'
+          opt: '1-A-109'
         }
       ]
     }, {
