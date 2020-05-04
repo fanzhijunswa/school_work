@@ -27,6 +27,13 @@
       "unicode_decimal": 58917
     },
     {
+      "icon_id": "4437591",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
       "icon_id": "5912736",
       "name": "座位",
       "font_class": "zuowei",
@@ -39,6 +46,13 @@
       "font_class": "zuowei1",
       "unicode": "e62f",
       "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "10683958",
+      "name": "喜欢",
+      "font_class": "xihuan",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
     },
     {
       "icon_id": "11749455",

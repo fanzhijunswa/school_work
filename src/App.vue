@@ -42,7 +42,8 @@ export default {
 <style lang="sass" scoped>
 @import '@/assets/styles/_color.sass'
 .container
-    background: linear-gradient(to right,#feac5e,#c779d0,#4bc0c8)
+    // background: linear-gradient(to right,#feac5e,#c779d0,#4bc0c8)
+    // background: url('./views/channel/images/ChMkJld2O0GIPdSbAAtP7L6piRwAATIkgCY3TgAC1AE489.jpg') no-repeat
     width: 100%
     min-height: 100%
     &>.el-container
