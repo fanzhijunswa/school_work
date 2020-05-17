@@ -62,6 +62,20 @@
       "unicode_decimal": 59521
     },
     {
+      "icon_id": "10593795",
+      "name": "闭眼,关闭,眼睛_jurassic",
+      "font_class": "jurassic_loseeyes",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "10593814",
+      "name": "睁眼,打开,眼睛_jurassic",
+      "font_class": "jurassic_openeyes",
+      "unicode": "e6a0",
+      "unicode_decimal": 59040
+    },
+    {
       "icon_id": "10683958",
       "name": "喜欢",
       "font_class": "xihuan",

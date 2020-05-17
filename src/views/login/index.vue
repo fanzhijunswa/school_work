@@ -8,8 +8,10 @@
                 el-form(:model="loginForm" :rules="loginRules" ref="loginForm" class="demo-ruleForm")
                     el-form-item(label="用户名" prop="userName")
                         el-input(v-model="loginForm.userName")
-                    el-form-item(label="密码" prop="userPassword")
-                        el-input(v-model="loginForm.userPassword")
+                    el-form-item(label="密码" prop="userPassword" class="eyes-input")
+                        el-input(v-model="loginForm.userPassword" :type="!passwordFlag && 'password'" )
+                        .eyes(@click="passwordFlag = !passwordFlag")
+                            i.iconfont(:class="[!passwordFlag ? 'icon-jurassic_openeyes' : 'icon-jurassic_loseeyes']")
                     el-form-item(label="手机号" prop="userPhone")
                         el-input(v-model="loginForm.userPhone")
                     el-form-item(label="学号" prop="userCard")
@@ -39,7 +41,8 @@ export default {
       },
       showPic: false,
       formData: new FormData(),
-      nextPage: false
+      nextPage: false,
+      passwordFlag: false
     }
   },
   mounted () {
@@ -255,4 +258,11 @@ export default {
                         img
                             width: 100%
                             height: 100%
+.eyes-input
+    position: relative
+    .eyes
+        position: absolute
+        top: 0
+        right: 13px
+        cursor: pointer
 </style>
