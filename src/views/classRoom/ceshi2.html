@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const ceshi = async () => {
+            console.log('我是一个表达式')
+            // async这个异步函数返回的一定是一个Promise对象,如果是正常值的情况下返回的就是 Promise.resolve('123'),
+            // 如果是错误的话,async会抛出异常,例如: Promise.reject(123),如果是没有值的情况下返回的就是 Promise.resolve(undefined),
+            // 函数没有返回值的话,默认就是undefined
+            return 123
+        }
+        // 有return的情况下,值就是返回的这个值
+        // 有return，但是有异常的情况下,自动抛出异常
+        // 没有return的情况下,返回的就是 undefined
+        ceshi().then(resp => console.log(resp))
+
+        /* 1. async 函数返回的一定是一个promise对象,但是要记住,如果async返回的是个promise对象的话,也代表他返回的是一个异步
+        Promise对象了，那么await会将执行权交给外界,当外界执行完毕其余的代码后,最后会按照先进先出的顺序,执行异步队列 */
+        Promise.resolve(123).then(resp => console.log(resp))
+        console.log('哈哈,我是主线程')
+
+        /* 从这里就能看出,async函数返回的是Promise.resolve,但是这是一个promise对象,promise对象是不会阻塞代码执行的,会进入
+        到异步执行队列,那么先执行的就是 ceshi函数中的第一个console，执行完毕后,return出去了一个Promise对象,进入异步队列,
+        然后执行第二个console,然后异步队列目前有两个,先进先出,先执行20行的Promise.resolve.then,然后再执行24行 */
+
+        /* await 后面如果是一个promise对象的话,那么await这个表达式的值其实就是 后面promise对象 resolve的参数值,
+        那么这一执行行为就是一个异步操作
+        如果await 后面不是一个promise对象的话,会进行转义,自动转换成 Promise.resolve() ,立即执行 */
+    </script>
+</body>
+</html>

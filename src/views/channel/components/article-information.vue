@@ -6,15 +6,30 @@
         .small-title-write {{ message.smallTitle }}
         .small-title-count {{ message.peopleCount }}{{ '次' }}
     .container
-        .article {{ message.container }}
-        .img
+        .article {{  message.container }}
+        template(v-if="isArray(message.container_img)")
+            .img
+                img(:src="message.container_img[0].imgUrl")
+        .img(v-else)
             img(:src="message.container_img || message.imgArr")
 </template>
 
 <script>
+import _ from 'lodash'
 export default {
   props: {
     message: Object
+  },
+  watch: {
+    message: {
+      handler (newV) {
+        console.log(newV)
+      },
+      deep: true
+    }
+  },
+  methods: {
+    isArray: _.isArray
   }
 }
 </script>

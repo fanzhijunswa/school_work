@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //    const set1 = () => {
+    //        return new Promise(resolve => {
+    //             window.setTimeout(() => {
+    //                 console.log('我是9秒执行的哦')
+    //                 resolve()
+    //             },9000)
+    //        })
+    //    }
+    //     const set2 = () => {
+    //         return new Promise(resolve => {
+    //             window.setTimeout(() => {
+    //                 console.log('我是6秒执行的哦')
+    //                 resolve()
+    //             },6000)
+    //         })
+    //     }
+    //     const set3 = () => {
+    //         return new Promise(resolve => {
+    //             window.setTimeout(() => {
+    //                 console.log('我是3秒执行的哦')
+    //                 resolve()
+    //             },3000)
+    //         })
+    //     }
+
+    //     const arr = [set1,set2,set3]
+
+    //     const asyncReduce = (arr) => {
+    //         return new Promise(async resolve => {
+    //             await arr.reduce(async (prev,next) => {
+    //                 await prev
+    //                 return new Promise(async resolve => {
+    //                     await next()
+    //                     resolve()
+    //                 })
+    //             },Promise.resolve())
+    //             resolve('全部执行完成')
+    //         })
+    //     }
+
+    //     Promise.asyncReduce = asyncReduce
+
+    //     Promise.asyncReduce(arr).then(resp => console.log(resp))
+
+    //     // reduce 函数可以将 map 和 filter 两个函数的功能全部实现
+    //     const numbers = [10, 20, 30, 10,5,40];
+    //     const ceshi = numbers.reduce((prev,next) => next * 2 > 50 ? [...prev,next] : prev,[])
+    //     console.log(ceshi)
+
+    //     // async 函数返回的是一个 promise对象,那么我们就可以通过then来接收
+    //     const fun = async () => {
+    //         // 这里Promise.reject返回错误的promise对象,then的第二个参数也可以接收，或者是catch
+    //         return 1 + 1 > 2 ?  '我是promise待处理部分' : Promise.reject('我是错误的')
+    //     }
+
+    //     fun().then(resp => console.log(resp),e => console.log(e))
+
+    //     // async
+    //     async function testAsync() {
+    //         return "hello async";
+    //     }
+    //     let data = testAsync().then( (data) => {
+    //         console.log(data) // hello async
+    //         return data
+    //     });
+    //     console.log(data);
+
+        // function curry (add) {
+        //     const [,...leftArr] = [...arguments]
+        //     return function () {
+        //         const rightArr = [...arguments]
+        //         const addArr = [...leftArr,...rightArr]
+        //         add.apply(null,addArr)
+        //     }
+        // }
+
+        // function sum (arr) {
+        //     return arr.reduce((prev,next) => prev+next)
+        // }
+        // ['sum'].forEach(item => {
+        //     Array.prototype[item] = eval(item)
+        // });
+        // const add = (...arr) => {
+        //     console.log(arr.sum(arr))
+        // }
+        // curry(add,1,2,3,4,45)(2,3,4,5,6,7,7)
+
+    </script>
+</body>
+</html>

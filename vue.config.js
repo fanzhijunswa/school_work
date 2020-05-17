@@ -1,3 +1,7 @@
+const path = require('path')
+
+const resolve = dir => path.join(__dirname, dir)
+
 module.exports = {
   devServer: {
     open: true,
@@ -22,5 +26,10 @@ module.exports = {
       .use('pug-html-loader')
       .loader('pug-html-loader')
       .end()
+    // 通过这种链式方式来设置文件路径的别名
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('api', resolve('src/api'))
+      .set('~styles', resolve('/src/assets/styles'))
   }
 }

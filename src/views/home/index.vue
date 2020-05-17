@@ -3,11 +3,12 @@
     .home-middle
         .home-middle-top
             .home-middle-top-left
-                home-card(:option="{backgroundColor: '#178FFF',top: 'ORDERS',middle: '1,587',bottom: '近日新增15条文件',icon: 'iconfont icon-wenjian',marginShow: true}")
-                home-card(:option="{backgroundColor: '#F5BE11',top: 'VISITORS',middle: '234',bottom: '近日新增15条文件',icon: 'iconfont icon-tongji',marginShow: false}")
+                //后期优化.加上插槽,遍历4次,向插槽插入数据,避免重复代码太多
+                home-card(:option="{backgroundColor: '#178FFF',top: 'ORDERS',middle: userObj.file,bottom: `近日新增${userObj.file}篇文章`,icon: 'iconfont icon-wenjian',marginShow: true}")
+                home-card(:option="{backgroundColor: '#F5BE11',top: 'VISITORS',middle: userObj.favorite, bottom: `近日新增${userObj.favorite}个喜欢`,icon: 'iconfont icon-tongji',marginShow: false}")
             .home-middle-top-right
-                home-card(:option="{backgroundColor: '#22B678',top: 'ORDERS',middle: '1,587',bottom: '近日新增15条文件',icon: 'iconfont icon-fl-renyuan',marginShow: true}")
-                home-card(:option="{backgroundColor: '#EB3838',top: 'ORDERS',middle: '1,587',bottom: '近日新增15条文件',icon: 'iconfont icon-xiaoxi',marginShow: false,animationShow: true}")
+                home-card(:option="{backgroundColor: '#22B678',top: 'ORDERS',middle: userObj.people, bottom: `近日新增${userObj.people}位粉丝`,icon: 'iconfont icon-fl-renyuan',marginShow: true}")
+                home-card(:option="{backgroundColor: '#EB3838',top: 'ORDERS',middle: userObj.message, bottom: `近日新增${userObj.message}条通知`,icon: 'iconfont icon-xiaoxi',marginShow: false,animationShow: true}")
         .home-middle-bottom
             .home-bottom-left
                 .home-bottom-left-top 统计图
@@ -23,6 +24,7 @@
 <script>
 import HomeDashboard from './components/home-dashboard'
 import HomeCard from './components/home-card'
+import { getHomeMessage } from 'api/home'
 export default {
   name: 'home',
   components: {
@@ -30,16 +32,36 @@ export default {
     HomeDashboard
   },
   data () {
-    return {}
+    return {
+      userObj: {}
+    }
   },
-  mounted () {
-
+  async mounted () {
+    await this.getData()
+  },
+  methods: {
+    getData () {
+      return Promise.all([this.getHomeMessage()]).catch(err => console.warn(err))
+    },
+    getHomeMessage () {
+      return new Promise(async (resolve, reject) => {
+        this.$loadingStart()
+        try {
+          const { file, favorite, people, message } = await getHomeMessage()
+          this.userObj = { file, favorite, people, message }
+          resolve()
+        } catch (e) {
+          reject(e)
+        }
+        this.$loadingEnd()
+      })
+    }
   }
 }
 </script>
 
 <style lang="sass" scoped>
-@import '@/assets/styles/_color.sass'
+@import '~styles/_color.sass'
 .home
     height: 100%
     width: 100%

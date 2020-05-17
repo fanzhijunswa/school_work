@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import '@/assets/styles/_color.sass'
+@import '~styles/_color.sass'
 
 .home-top-child
     height: 100%

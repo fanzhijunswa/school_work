@@ -20,6 +20,13 @@
       "unicode_decimal": 58929
     },
     {
+      "icon_id": "982373",
+      "name": "女",
+      "font_class": "nv",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
       "icon_id": "2439690",
       "name": "人员",
       "font_class": "fl-renyuan",
@@ -48,6 +55,13 @@
       "unicode_decimal": 58927
     },
     {
+      "icon_id": "9626958",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e881",
+      "unicode_decimal": 59521
+    },
+    {
       "icon_id": "10683958",
       "name": "喜欢",
       "font_class": "xihuan",
@@ -60,6 +74,20 @@
       "font_class": "wenjian",
       "unicode": "e691",
       "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "11804450",
+      "name": "男",
+      "font_class": "nan",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "12316667",
+      "name": "新增",
+      "font_class": "xinzeng",
+      "unicode": "e622",
+      "unicode_decimal": 58914
     },
     {
       "icon_id": "13764758",

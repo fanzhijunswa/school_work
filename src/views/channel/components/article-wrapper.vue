@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import '@/assets/styles/_color.sass'
+@import '~styles/_color.sass'
 .xyfc
     width: 100%
     display: flex

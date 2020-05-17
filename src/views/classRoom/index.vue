@@ -37,7 +37,7 @@ export default {
     get: _.get,
     getClassRoom () {
       return new Promise(resolve => {
-        this.$http.get('/classRoom', { params: { filter: 1 } }).then(resp => {
+        this.$http.get('/classRoom', { params: { filter: 2 } }).then(resp => {
           this.classRoomMsgAll = resp
           this.classRoomLoading = false
           resolve()
@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import '@/assets/styles/_color.sass'
+@import '~styles/_color.sass'
 .classRoom
     width: 100%
     height: 1680px
